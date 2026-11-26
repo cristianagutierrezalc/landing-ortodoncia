@@ -1,52 +1,38 @@
-# 🦷 OrtoQuest — Landing neobrutal para clínicas de ortodoncia
+# 🦷 Landing profesional de ortodoncia
 
-Landing page de una sola página con concepto de **videojuego**: el tratamiento de ortodoncia se presenta como niveles (Valoración → Brackets → Ajustes → BOSS FINAL: la sonrisa). Incluye un **simulador interactivo de sonrisa** con confetti, ticker animado, FAQ con humor y todos los CTA apuntando a WhatsApp.
+Landing page **profesional** para clínicas de ortodoncia: paleta teal/crema/ámbar, tipografía serif (Fraunces + Inter), casos reales, testimonios, proceso en 4 pasos, financiación, formulario que envía directo a WhatsApp y nota de privacidad de datos (Ley 1581).
 
-**El objetivo comercial de este repo**: personalizar esta plantilla para cada clínica prospecto, tomarle screenshot y usarla como **maqueta gratis** en el pitch de venta.
-
-## 🎨 Identidad visual
-
-- Estilo: **neobrutalismo juguetón** (bordes gruesos, sombras duras, colores eléctricos)
-- Paleta base: violeta `#7C3AED` · lima `#B6F34D` · rosa `#FF7AC3` · crema `#FFF7EC`
-- Tipografías: Archivo Black (títulos) + Space Grotesk (texto)
+**Objetivo del repo**: personalizar por clínica prospecto (solo `js/config.js`) → screenshot → **maqueta gratis** para el pitch de venta.
 
 ## 🗂️ Estructura
 
 ```
 landing-ortodoncia/
-├── index.html        → Página completa
-├── css/style.css     → Todo el estilo neobrutal
-├── js/config.js      → ⚡ EL ARCHIVO QUE SE EDITA POR CLÍNICA
-├── js/main.js        → Interacciones (simulador, confetti, menú, reveal)
+├── index.html        → Página completa (7 secciones)
+├── css/style.css     → Estilo clínica boutique
+├── js/config.js      → ⚡ SE EDITA POR CLÍNICA
+├── js/main.js        → Config dinámica, formulario→WhatsApp, reveal
 └── README.md
 ```
 
-## ⚡ Personalizar para una clínica (flujo de 30 minutos)
+## ⚡ Personalizar por clínica (30 min)
 
-1. Edita **`js/config.js`**: nombre de la clínica, ciudad, teléfono WhatsApp, colores de marca, link de Maps
-2. Opcional en `index.html`: ajusta los precios de los planes (busca `<!-- EDITAR -->`) y reemplaza los emojis de servicios si la clínica lo pide
-3. Abre `index.html` en el navegador → verifica que todo se vea con la marca de la clínica
-4. **Screenshot** de las secciones principales → esa es la maqueta para el pitch
-5. Si la clínica acepta: cambia el teléfono real, genera su dominio y despliega
+1. `js/config.js`: nombre, ciudad, teléfono, dirección, horarios, colores
+2. `index.html`: precios si aplica, testimonios reales, textos propios (buscar `<!-- EDITAR -->`)
+3. **Reemplazar los placeholders 📷 por fotos reales** (casos antes/después con autorización del paciente, fachada, consultorio)
+4. Verificar en celular → screenshot → maqueta lista
+5. Acepta → deploy (Vercel/GitHub Pages) + dominio propio
 
 ## 👀 Ver local
 
-Abre `index.html` con doble clic en el navegador (funciona sin servidor).
+Doble clic en `index.html` — funciona sin servidor.
 
-## 🌐 Desplegar
+## 📝 Notas profesionales
 
-- **Vercel**: [vercel.com/new](https://vercel.com/new) → importa el repo → Deploy
-- **GitHub Pages**: Settings → Pages → rama `main` → root
-
-## ✅ Checklist por clínica
-
-- [ ] `config.js`: nombre, ciudad, teléfono, colores, Maps
-- [ ] Precios de planes confirmados con la clínica
-- [ ] Fotos reales de la clínica (si las da) reemplazando stickers
-- [ ] Probar en celular
-- [ ] Deploy + dominio propio
-- [ ] Google Search Console / verificación de negocio en Maps
+- Los testimonios incluidos son **de ejemplo**: reemplazar por testimonios reales con autorización
+- Las calificaciones/pacientes son editables: nunca inflar datos falsos
+- El formulario no guarda datos: todo viaja por WhatsApp (privacidad por diseño)
 
 ---
 
-Hecho por Cristian Gutiérrez · desarrollo web local 🦷
+Desarrollo web local · Cristian Gutiérrez

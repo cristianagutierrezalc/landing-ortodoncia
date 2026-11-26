@@ -1,29 +1,24 @@
 // ═══════════════════════════════════════════════════
-// OrtoQuest · CONFIGURACIÓN DE LA CLÍNICA
-// ═══════════════════════════════════════════════════
-// ⚡ PERSONALIZA SOLO ESTE ARCHIVO PARA CADA CLÍNICA:
-// cambia estos valores → toda la página se viste de la clínica.
-// Luego: screenshot → maqueta lista para enviar al prospecto.
+// CONFIGURACIÓN DE LA CLÍNICA
+// ⚡ Edita SOLO este archivo para personalizar cada
+// prospecto → screenshot → maqueta lista para enviar.
 // ═══════════════════════════════════════════════════
 
 const CONFIG = {
-  // Nombre de la clínica (aparece en nav, footer y título)
-  clinica: "OrtoQuest Dental",
-
-  // Profesional principal (opcional)
-  profesional: "Dra. Sonrisa",
-
-  // Ciudad (aparece en hero, ticker, footer y SEO)
+  clinica: "Clínica Ortodoncia",        // Nombre comercial
   ciudad: "Valledupar",
 
-  // WhatsApp con código de país y SIN el "+" (ej: Colombia = 57...)
-  telefono: "573042611924",
+  telefono: "573042611924",             // WhatsApp con código país, sin "+"
 
-  // Ubicación exacta para el enlace de Google Maps
+  direccion: "Valledupar, Cesar — dirección exacta aquí", // EDITAR
+  horario: "Lun–Vie 8:00am–6:00pm · Sáb 8:00am–12:00m",   // EDITAR
+
   mapa: "https://maps.google.com/?q=ortodoncia+Valledupar",
 
-  // Colores de la clínica (cámbialos para re-vestir la página)
-  colorPrimario: "#7C3AED",  // violeta
-  colorLima: "#B6F34D",      // acento 1
-  colorRosa: "#FF7AC3",      // acento 2
+  pacientes: "300",                     // EDITAR: número real de pacientes
+
+  // Colores (por si una clínica quiere su propia paleta)
+  colorPrimario: "#0E7C86",
+  colorOscuro: "#0A5C64",
+  colorAcento: "#F2A03D",
 };

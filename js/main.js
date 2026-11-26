@@ -1,34 +1,33 @@
 // ═══════════════════════════════════════════
-// OrtoQuest · Interacciones
+// Landing profesional · Interacciones
 // ═══════════════════════════════════════════
 
 document.documentElement.classList.add('js');
 
-// ── Aplicar la configuración de la clínica (config.js) ──
+// ── Aplicar configuración de la clínica ──
 (function applyConfig() {
   const root = document.documentElement;
-  if (CONFIG.colorPrimario) root.style.setProperty('--violet', CONFIG.colorPrimario);
-  if (CONFIG.colorLima) root.style.setProperty('--lime', CONFIG.colorLima);
-  if (CONFIG.colorRosa) root.style.setProperty('--pink', CONFIG.colorRosa);
+  if (CONFIG.colorPrimario) root.style.setProperty('--primary', CONFIG.colorPrimario);
+  if (CONFIG.colorOscuro) root.style.setProperty('--primary-dark', CONFIG.colorOscuro);
+  if (CONFIG.colorAcento) root.style.setProperty('--accent', CONFIG.colorAcento);
 
   document.querySelectorAll('[data-clinica]').forEach(el => el.textContent = CONFIG.clinica);
   document.querySelectorAll('[data-ciudad]').forEach(el => el.textContent = CONFIG.ciudad);
+  document.querySelectorAll('[data-horario]').forEach(el => el.textContent = CONFIG.horario);
+  document.querySelectorAll('[data-direccion]').forEach(el => el.textContent = CONFIG.direccion);
+  document.querySelectorAll('[data-pacientes]').forEach(el => el.textContent = CONFIG.pacientes);
+  document.querySelectorAll('[data-telefono]').forEach(el => el.textContent = '+' + CONFIG.telefono);
   document.title = `${CONFIG.clinica} · Ortodoncia en ${CONFIG.ciudad}`;
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
-    metaDesc.content = `Ortodoncia en ${CONFIG.ciudad}: brackets, alineadores y retenciones con un proceso claro y cero aburrido. Agenda tu valoración por WhatsApp.`;
+    metaDesc.content = `Clínica de ortodoncia en ${CONFIG.ciudad}: brackets estéticos, alineadores invisibles y planes de pago fijos. Agenda tu valoración hoy.`;
   }
 
-  const waBase = `https://wa.me/${CONFIG.telefono}`;
-  document.querySelectorAll('[data-wa]').forEach(a => {
-    const text = a.dataset.waText || '¡Hola! Quiero información sobre ortodoncia 🦷';
-    a.href = `${waBase}?text=${encodeURIComponent(text)}`;
-    a.target = '_blank';
-    a.rel = 'noopener';
-  });
-
   document.querySelectorAll('[data-maps]').forEach(a => a.href = CONFIG.mapa);
+
+  // Enlaces tel: con el número de la clínica
+  document.querySelectorAll('[data-phone-link]').forEach(a => a.href = 'tel:+' + CONFIG.telefono);
 })();
 
 // ── Menú móvil ──
@@ -64,47 +63,17 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach(el => el.classList.add('visible'));
 }
 
-// ── Simulador de sonrisa ──
-const smiley = document.getElementById('smiley');
-const transformBtn = document.getElementById('transformBtn');
-const countEl = document.getElementById('smileyCount');
-const confettiZone = document.getElementById('confettiZone');
-
-if (smiley && transformBtn) {
-  let transforms = 0;
-  transformBtn.addEventListener('click', () => {
-    const isCrooked = smiley.classList.contains('stage-crooked');
-    if (isCrooked) {
-      smiley.classList.remove('stage-crooked');
-      smiley.classList.add('stage-perfect');
-      transformBtn.textContent = '↩️ Volver al pasado';
-      transforms++;
-      if (countEl) countEl.textContent = String(transforms);
-      spawnConfetti();
-    } else {
-      smiley.classList.remove('stage-perfect');
-      smiley.classList.add('stage-crooked');
-      transformBtn.textContent = '✨ Transformar sonrisa';
-    }
+// ── Formulario → WhatsApp (sin servidor, sin correo) ──
+const waForm = document.getElementById('waForm');
+if (waForm) {
+  waForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('fNombre').value.trim();
+    const tel = document.getElementById('fTelefono').value.trim();
+    const motivo = document.getElementById('fMotivo').value;
+    const texto = `Hola, soy ${nombre}. Quiero información sobre: ${motivo}. Mi teléfono: ${tel}.`;
+    window.open(`https://wa.me/${CONFIG.telefono}?text=${encodeURIComponent(texto)}`, '_blank');
   });
-}
-
-// ── Confetti ──
-function spawnConfetti() {
-  if (!confettiZone) return;
-  const colors = ['#7C3AED', '#B6F34D', '#FF7AC3', '#FFD23F', '#7DD3FC'];
-  for (let i = 0; i < 42; i++) {
-    const piece = document.createElement('span');
-    piece.className = 'confetti-piece';
-    piece.style.left = (Math.random() * 96 + 2) + '%';
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.width = (7 + Math.random() * 7) + 'px';
-    piece.style.height = (10 + Math.random() * 8) + 'px';
-    piece.style.animationDuration = (1.6 + Math.random() * 1.2) + 's';
-    piece.style.animationDelay = (Math.random() * 0.4) + 's';
-    confettiZone.appendChild(piece);
-    setTimeout(() => piece.remove(), 3200);
-  }
 }
 
 // ── Año dinámico ──
