@@ -53,40 +53,11 @@
           <span class="sticker s-pink">😁 (casi) sin dolor</span>
         </div>
       </div>
-      <div class="hero-art reveal">
-        <div class="smiley-wrap" id="smileyHero">
-          <!-- Carita SVG: dientes torcidos + brackets → botón los transforma -->
-          <svg id="smiley" class="stage-crooked" viewBox="0 0 220 220" role="img" aria-label="Carita con brackets que se transforma en sonrisa perfecta">
-            <circle cx="110" cy="110" r="96" fill="#FFD23F" stroke="#111" stroke-width="5"/>
-            <circle cx="76" cy="84" r="9" fill="#111"/>
-            <circle cx="79" cy="81" r="3" fill="#fff"/>
-            <circle cx="144" cy="84" r="9" fill="#111"/>
-            <circle cx="147" cy="81" r="3" fill="#fff"/>
-            <ellipse cx="56" cy="104" rx="13" ry="8" fill="#FF7AC3" opacity=".7"/>
-            <ellipse cx="164" cy="104" rx="13" ry="8" fill="#FF7AC3" opacity=".7"/>
-            <rect x="50" y="118" width="120" height="58" rx="26" fill="#111"/>
-            <g id="teeth">
-              <rect class="tooth t1" x="62"  y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
-              <rect class="tooth t2" x="81"  y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
-              <rect class="tooth t3" x="100" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
-              <rect class="tooth t4" x="119" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
-              <rect class="tooth t5" x="138" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
-            </g>
-            <g id="braces">
-              <line x1="58" y1="134" x2="162" y2="134" stroke="#7C3AED" stroke-width="5"/>
-              <rect class="bracket b1" x="66"  y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
-              <rect class="bracket b2" x="85"  y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
-              <rect class="bracket b3" x="104" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
-              <rect class="bracket b4" x="123" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
-              <rect class="bracket b5" x="142" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
-            </g>
-            <text class="sparkle" x="30"  y="52"  font-size="22">✦</text>
-            <text class="sparkle" x="186" y="60"  font-size="16">✦</text>
-            <text class="sparkle" x="196" y="170" font-size="20">✦</text>
-            <text class="sparkle" x="16"  y="178" font-size="16">✦</text>
-          </svg>
-          <button class="btn btn-lime" id="transformBtn">✨ Transformar sonrisa</button>
-          <p class="smiley-count">Sonrisas transformadas: <strong id="smileyCount">0</strong> 😁</p>
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="sticker-stack">
+          <div class="big-sticker bs-1">😁</div>
+          <div class="big-sticker bs-2">🦷</div>
+          <div class="big-sticker bs-3">✨</div>
         </div>
       </div>
     </div>
@@ -95,8 +66,8 @@
   <!-- ═══════════ TICKER ═══════════ -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>BRACKETS METÁLICOS ✦ ALINEADORES ✦ SONRISAS LEGENDARIAS ✦ <span data-ciudad>VALLEDUPAR</span> ✦ RETENCIONES ✦ PRIMERA VALORACIÓN ✦ </span>
-      <span>BRACKETS METÁLICOS ✦ ALINEADORES ✦ SONRISAS LEGENDARIAS ✦ <span data-ciudad>VALLEDUPAR</span> ✦ RETENCIONES ✦ PRIMERA VALORACIÓN ✦ </span>
+      <span>BRACKETS METÁLICOS ✦ ALINEADORES ✦ SONRISAS LEGENDARIAS ✦ <span data-ciudad>VALLEDUPAR</span> ✦ RETENCIONES ✦ PRIMERA VALORACIÓN ✦&nbsp;</span>
+      <span>BRACKETS METÁLICOS ✦ ALINEADORES ✦ SONRISAS LEGENDARIAS ✦ <span data-ciudad>VALLEDUPAR</span> ✦ RETENCIONES ✦ PRIMERA VALORACIÓN ✦&nbsp;</span>
     </div>
   </div>
 
@@ -179,6 +150,41 @@
       <p class="section-kicker reveal">🧪 Zona de pruebas</p>
       <h2 class="section-title reveal">Simulador de sonrisa</h2>
       <p class="section-sub reveal">Aprieta el botón y mira lo que hace el tratamiento. (Spoiler: en la vida real tarda meses, pero se ve igual de satisfactorio.)</p>
+
+      <div class="smiley-wrap reveal">
+        <svg id="smiley" class="stage-crooked" viewBox="0 0 220 220" role="img" aria-label="Carita con brackets que se transforma en sonrisa perfecta">
+          <circle cx="110" cy="110" r="96" fill="#FFD23F" stroke="#111" stroke-width="5"/>
+          <circle cx="76" cy="84" r="9" fill="#111"/>
+          <circle cx="79" cy="81" r="3" fill="#fff"/>
+          <circle cx="144" cy="84" r="9" fill="#111"/>
+          <circle cx="147" cy="81" r="3" fill="#fff"/>
+          <ellipse cx="56" cy="104" rx="13" ry="8" fill="#FF7AC3" opacity=".7"/>
+          <ellipse cx="164" cy="104" rx="13" ry="8" fill="#FF7AC3" opacity=".7"/>
+          <rect x="50" y="118" width="120" height="58" rx="26" fill="#111"/>
+          <g id="teeth">
+            <rect class="tooth t1" x="62"  y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
+            <rect class="tooth t2" x="81"  y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
+            <rect class="tooth t3" x="100" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
+            <rect class="tooth t4" x="119" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
+            <rect class="tooth t5" x="138" y="120" width="16" height="28" rx="4" fill="#fff" stroke="#111"/>
+          </g>
+          <g id="braces">
+            <line x1="58" y1="134" x2="162" y2="134" stroke="#7C3AED" stroke-width="5"/>
+            <rect x="66"  y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
+            <rect x="85"  y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
+            <rect x="104" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
+            <rect x="123" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
+            <rect x="142" y="127" width="8" height="14" rx="2" fill="#B6F34D" stroke="#111"/>
+          </g>
+          <text class="sparkle" x="30"  y="52"  font-size="22">✦</text>
+          <text class="sparkle" x="186" y="60"  font-size="16">✦</text>
+          <text class="sparkle" x="196" y="170" font-size="20">✦</text>
+          <text class="sparkle" x="16"  y="178" font-size="16">✦</text>
+        </svg>
+        <button class="btn btn-lime" id="transformBtn">✨ Transformar sonrisa</button>
+        <p class="smiley-count">Sonrisas transformadas: <strong id="smileyCount">0</strong> 😁</p>
+      </div>
+
       <div class="confetti-zone" id="confettiZone" aria-hidden="true"></div>
     </div>
   </section>
@@ -203,7 +209,7 @@
           <p class="plan-tag">Casi invisibles, 100% efectivos</p>
           <p class="plan-price"><span>desde</span> $ — <em>/mes</em></p>
           <ul><li>Cerámica del color de tu diente</li><li>Ajustes mensuales</li><li>Retención al finalizar</li></ul>
-          <a class="btn btn-primary" data-wa data-wa-text="Hola! Me interesan los brackets estéticos ✨">Elegir plan</a>
+          <a class="btn btn-lime" data-wa data-wa-text="Hola! Me interesan los brackets estéticos ✨">Elegir plan</a>
         </article>
         <article class="plan-card reveal">
           <h3>🫥 Alineadores</h3>
