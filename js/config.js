@@ -15,7 +15,13 @@ const CONFIG = {
 
   mapa: "https://maps.google.com/?q=ortodoncia+Valledupar",
 
-  pacientes: "300",                     // EDITAR: número real de pacientes
+  // Cifras para los contadores animados (usa datos REALES)
+  cifras: {
+    pacientes: 300,   // EDITAR
+    casos: 150,       // EDITAR
+    anios: 8,         // EDITAR
+    rating: "4.9",    // EDITAR
+  },
 
   // Colores (por si una clínica quiere su propia paleta)
   colorPrimario: "#0E7C86",

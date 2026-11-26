@@ -6,6 +6,23 @@
   <title>Ortodoncia especializada — Sonrisas bien planeadas</title>
   <meta name="description" content="Clínica de ortodoncia en Valledupar. Brackets estéticos, alineadores invisibles y planes de pago fijos. Agenda tu valoración hoy.">
   <meta name="theme-color" content="#0E7C86">
+  <!-- Open Graph: preview al compartir el link -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ortodoncia especializada en Valledupar">
+  <meta property="og:description" content="Brackets estéticos, alineadores invisibles y cuotas fijas. Agenda tu valoración hoy.">
+  <meta property="og:image" content=""> <!-- EDITAR: url de foto de portada -->
+  <!-- SEO estructurado (schema.org) — EDITAR teléfono y dirección reales -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Clínica Ortodoncia",
+    "address": { "@type": "PostalAddress", "addressLocality": "Valledupar", "addressRegion": "Cesar", "addressCountry": "CO" },
+    "telephone": "+573042611924",
+    "priceRange": "$$",
+    "medicalSpecialty": "Orthodontic"
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230E7C86'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle'%3E🦷%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +30,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#tratamientos">Saltar al contenido</a>
 
   <!-- ═══ Barra superior de contacto ═══ -->
   <div class="topbar">
@@ -23,7 +42,7 @@
   </div>
 
   <!-- ═══ NAV ═══ -->
-  <header class="nav">
+  <header class="nav" id="nav">
     <div class="container nav-inner">
       <a href="#inicio" class="logo">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.5-1.8-3.6-2.5-5.4-1.6C4.3 5 3.4 7.5 4.1 10c.6 2.2 1.7 4.3 3 6.1.8 1.1 1.6 2.4 2.9 2.4 1.6 0 1.4-2 2-2s.4 2 2 2c1.3 0 2.1-1.3 2.9-2.4 1.3-1.8 2.4-3.9 3-6.1.7-2.5-.2-5-2.5-6.1-1.8-.9-3.9-.2-5.4 1.6z"/></svg>
@@ -33,6 +52,7 @@
         <a href="#tratamientos">Tratamientos</a>
         <a href="#proceso">Proceso</a>
         <a href="#casos">Casos</a>
+        <a href="#planes">Planes</a>
         <a href="#faq">Preguntas</a>
         <a href="#contacto" class="nav-cta">Agendar valoración</a>
       </nav>
@@ -58,24 +78,35 @@
           <a class="btn btn-outline" href="#tratamientos">Ver tratamientos</a>
         </div>
         <div class="trust-chips reveal">
-          <span class="chip">★ <strong>4.9</strong> en Google <!-- EDITAR: calificación real --></span>
-          <span class="chip">＋<span data-pacientes>300</span> pacientes atendidos <!-- EDITAR --></span>
+          <span class="chip">★ <strong data-rating>4.9</strong> en Google <!-- EDITAR --></span>
+          <span class="chip">＋<span class="counter" data-target="300">0</span> pacientes atendidos <!-- EDITAR --></span>
           <span class="chip">✓ Ortodoncista certificada</span>
         </div>
       </div>
       <div class="hero-visual reveal">
-        <div class="case-card">
-          <div class="case-imgs">
-            <figure class="case-ph">
-              <span>📷</span>
-              <figcaption>ANTES</figcaption>
-            </figure>
-            <figure class="case-ph">
-              <span>🦷</span>
-              <figcaption>DESPUÉS</figcaption>
-            </figure>
+        <div class="hero-art">
+          <div class="orbit orbit-1" aria-hidden="true"></div>
+          <div class="orbit orbit-2" aria-hidden="true"></div>
+          <!-- Ilustración premium de diente -->
+          <svg class="tooth-art" viewBox="0 0 200 200" role="img" aria-label="Ilustración de un diente sano">
+            <defs>
+              <linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#DCEEEF"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 52c-14-17-34-24-51-15C28 48 19 71 26 94c6 21 16 41 28 58 7 10 15 22 27 22 15 0 13-19 19-19s4 19 19 19c12 0 20-12 27-22 12-17 22-37 28-58 7-23-2-46-23-57-17-9-37-2-51 15z" fill="url(#toothGrad)" stroke="#0E7C86" stroke-width="4"/>
+            <path d="M70 75c6-6 14-8 20-6" stroke="#7FBFC4" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </svg>
+          <!-- Tarjetas flotantes -->
+          <div class="float-card fc-rating">
+            <span class="fc-stars">★★★★★</span>
+            <span><strong data-rating>4.9</strong> · Google</span>
           </div>
-          <p class="case-note">Caso real · brackets estéticos · 14 meses <!-- EDITAR: reemplazar con fotos reales --></p>
+          <div class="float-card fc-patients">
+            <span class="fc-icon">🦷</span>
+            <span><strong>＋<span class="counter" data-target="300">0</span></strong><br>pacientes atendidos</span>
+          </div>
         </div>
       </div>
     </div>
@@ -100,44 +131,32 @@
 
       <div class="cards">
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M4 12h5M15 12h5"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M4 12h5M15 12h5"/></svg></div>
           <h3>Brackets metálicos</h3>
           <p>La opción más eficaz para la mayoría de casos. Ajustes mensuales y resultado comprobado.</p>
         </article>
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
           <h3>Brackets estéticos</h3>
           <p>Cerámica del color del diente: mismo resultado con mucho más discreción.</p>
         </article>
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C10.5 3.7 8.4 3 6.6 3.9 4.3 5 3.4 7.5 4.1 10c.6 2.2 1.7 4.3 3 6.1.8 1.1 1.6 2.4 2.9 2.4 1.6 0 1.4-2 2-2s.4 2 2 2c1.3 0 2.1-1.3 2.9-2.4 1.3-1.8 2.4-3.9 3-6.1.7-2.5-.2-5-2.5-6.1C16.6 3 14.5 3.7 12 5.5z"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C10.5 3.7 8.4 3 6.6 3.9 4.3 5 3.4 7.5 4.1 10c.6 2.2 1.7 4.3 3 6.1.8 1.1 1.6 2.4 2.9 2.4 1.6 0 1.4-2 2-2s.4 2 2 2c1.3 0 2.1-1.3 2.9-2.4 1.3-1.8 2.4-3.9 3-6.1.7-2.5-.2-5-2.5-6.1C16.6 3 14.5 3.7 12 5.5z"/></svg></div>
           <h3>Alineadores invisibles</h3>
           <p>Enderezar sin que nadie lo note. Removibles para comer y para las fotos importantes.</p>
         </article>
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></svg></div>
           <h3>Retención y control</h3>
           <p>La fase que protege tu inversión: retainers y controles periódicos para que el resultado se quede.</p>
         </article>
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 10v3l2 2M12 6V3M9 3h6"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M12 10v3l2 2M12 6V3M9 3h6"/></svg></div>
           <h3>Ortopedia infantil</h3>
           <p>Intervención temprana que guía el crecimiento y evita tratamientos largos en la adolescencia.</p>
         </article>
         <article class="card reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5L20 9l-4 3.8L17 18l-5-2.5L7 18l1-5.2L4 9l5.5-1z"/></svg>
-          </div>
+          <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5L20 9l-4 3.8L17 18l-5-2.5L7 18l1-5.2L4 9l5.5-1z"/></svg></div>
           <h3>Urgencias de brackets</h3>
           <p>Bracket suelto o arco molesto: atención prioritaria por WhatsApp el mismo día.</p>
         </article>
@@ -175,25 +194,52 @@
     </div>
   </section>
 
-  <!-- ═══ CASOS ═══ -->
+  <!-- ═══ CASOS: SLIDER ANTES/DESPUÉS ═══ -->
   <section class="section" id="casos">
-    <div class="container">
+    <div class="container casos-inner">
       <p class="eyebrow reveal">Casos reales</p>
       <h2 class="section-title reveal">Resultados que hablan solos</h2>
-      <p class="section-sub reveal">Cada tratamiento es distinto. En tu valoración te mostramos casos similares al tuyo. <!-- EDITAR: reemplazar con fotos reales --></p>
-      <div class="cases">
-        <figure class="case reveal">
-          <div class="case-photo">📷</div>
-          <figcaption><strong>Caso 01</strong> · Brackets estéticos · 14 meses</figcaption>
-        </figure>
-        <figure class="case reveal">
-          <div class="case-photo">📷</div>
-          <figcaption><strong>Caso 02</strong> · Alineadores invisibles · 10 meses</figcaption>
-        </figure>
-        <figure class="case reveal">
-          <div class="case-photo">📷</div>
-          <figcaption><strong>Caso 03</strong> · Ortopedia infantil · 9 meses</figcaption>
-        </figure>
+      <p class="section-sub reveal">Arrastra el control para comparar. En tu valoración te mostramos casos similares al tuyo. <!-- EDITAR: colocar fotos reales aquí --></p>
+
+      <div class="ba reveal" id="baSlider" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <div class="ba-img ba-after">
+          <div class="ba-ph">
+            <svg viewBox="0 0 200 200" width="72" height="72" fill="none" stroke="#0E7C86" stroke-width="4" stroke-linecap="round"><path d="M100 52c-14-17-34-24-51-15C28 48 19 71 26 94c6 21 16 41 28 58 7 10 15 22 27 22 15 0 13-19 19-19s4 19 19 19c12 0 20-12 27-22 12-17 22-37 28-58 7-23-2-46-23-57-17-9-37-2-51 15z"/></svg>
+            <span>DESPUÉS · foto real</span>
+          </div>
+          <span class="ba-label ba-label-right">DESPUÉS</span>
+        </div>
+        <div class="ba-img ba-before">
+          <div class="ba-ph">
+            <span>📷</span>
+            <span>ANTES · foto real</span>
+          </div>
+          <span class="ba-label">ANTES</span>
+        </div>
+        <div class="ba-handle" aria-hidden="true"><span>⇔</span></div>
+      </div>
+      <p class="ba-note">* Resultados pueden variar según el diagnóstico de cada paciente. Fotos con consentimiento informado.</p>
+    </div>
+  </section>
+
+  <!-- ═══ CIFRAS ═══ -->
+  <section class="stats">
+    <div class="container stats-inner">
+      <div class="stat reveal">
+        <span class="stat-num">＋<span class="counter" data-target="300">0</span></span>
+        <span class="stat-label">pacientes atendidos</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span class="counter" data-target="150">0</span></span>
+        <span class="stat-label">casos finalizados</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span class="counter" data-target="8">0</span></span>
+        <span class="stat-label">años de especialidad</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num"><span data-rating>4.9</span>★</span>
+        <span class="stat-label">calificación en Google</span>
       </div>
     </div>
   </section>
@@ -212,8 +258,53 @@
     </div>
   </section>
 
+  <!-- ═══ PLANES ═══ -->
+  <section class="section" id="planes">
+    <div class="container">
+      <p class="eyebrow reveal">Planes y financiación</p>
+      <h2 class="section-title reveal">Cuotas fijas, sin letra pequeña</h2>
+      <p class="section-sub reveal">Los valores definitivos se confirman en tu valoración según el diagnóstico. <!-- EDITAR: precios reales --></p>
+      <div class="plans">
+        <article class="plan reveal">
+          <h3>Brackets metálicos</h3>
+          <p class="plan-desc">La opción más eficaz para la mayoría de casos.</p>
+          <p class="plan-price"><span>desde</span> $ — <em>/mes</em></p>
+          <ul>
+            <li>Ajustes mensuales incluidos</li>
+            <li>Urgencias por WhatsApp</li>
+            <li>Fase de retención al finalizar</li>
+          </ul>
+          <a class="btn btn-outline" data-wa data-wa-text="Hola, me interesa el plan de brackets metálicos.">Consultar este plan</a>
+        </article>
+        <article class="plan plan-featured reveal">
+          <span class="plan-flag">MÁS ELEGIDO</span>
+          <h3>Brackets estéticos</h3>
+          <p class="plan-desc">Cerámica del color del diente: discreción total.</p>
+          <p class="plan-price"><span>desde</span> $ — <em>/mes</em></p>
+          <ul>
+            <li>Ajustes mensuales incluidos</li>
+            <li>Urgencias por WhatsApp</li>
+            <li>Fase de retención al finalizar</li>
+          </ul>
+          <a class="btn btn-accent" data-wa data-wa-text="Hola, me interesa el plan de brackets estéticos.">Consultar este plan</a>
+        </article>
+        <article class="plan reveal">
+          <h3>Alineadores invisibles</h3>
+          <p class="plan-desc">El tratamiento más discreto y removible.</p>
+          <p class="plan-price"><span>desde</span> $ — <em>/mes</em></p>
+          <ul>
+            <li>Cambios quincenales</li>
+            <li>Seguimiento por WhatsApp</li>
+            <li>Fase de retención al finalizar</li>
+          </ul>
+          <a class="btn btn-outline" data-wa data-wa-text="Hola, me interesan los alineadores invisibles.">Consultar este plan</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ TESTIMONIOS ═══ -->
-  <section class="section" id="testimonios">
+  <section class="section section-alt" id="testimonios">
     <div class="container">
       <p class="eyebrow reveal">Testimonios</p>
       <h2 class="section-title reveal">Lo que dicen nuestros pacientes</h2> <!-- EDITAR: reemplazar con testimonios reales -->
@@ -237,32 +328,21 @@
     </div>
   </section>
 
-  <!-- ═══ FINANCIACIÓN ═══ -->
-  <section class="financing">
-    <div class="container financing-inner reveal">
-      <div>
-        <h2>Empieza hoy, paga en cuotas fijas</h2>
-        <p>Sin intereses · sin letra pequeña · la cuota no cambia durante el tratamiento.</p>
-      </div>
-      <a class="btn btn-accent" href="#contacto">Consultar plan de pago</a>
-    </div>
-  </section>
-
   <!-- ═══ FAQ ═══ -->
-  <section class="section section-alt" id="faq">
+  <section class="section" id="faq">
     <div class="container faq-wrap">
       <p class="eyebrow reveal">Preguntas frecuentes</p>
       <h2 class="section-title reveal">Resolvemos tus dudas antes de empezar</h2>
       <details class="faq reveal"><summary>¿Duele colocarse los brackets?</summary><p>La colocación no es dolorosa. Durante los primeros días hay sensación de presión y sensibilidad leve, que disminuye en menos de una semana. En cada ajuste puede haber 2 o 3 días de molestia leve.</p></details>
       <details class="faq reveal"><summary>¿Cuánto dura un tratamiento de ortodoncia?</summary><p>Entre 12 y 24 meses en la mayoría de los casos, según el diagnóstico. En la valoración se entrega un tiempo estimado por escrito para tu caso específico.</p></details>
       <details class="faq reveal"><summary>¿Hay edad límite para tratarse?</summary><p>No. Existen opciones para niños desde los 8 años (ortopedia preventiva) y para adultos de cualquier edad, incluyendo alineadores invisibles.</p></details>
-      <details class="faq reveal"><summary>¿Cómo funcionan los pagos?</summary><p>Se establece una cuota mensual fija al inicio del tratamiento. No aumentos durante el proceso ni cobros ocultos al finalizar. Pregunta por los medios de pago disponibles.</p></details>
+      <details class="faq reveal"><summary>¿Cómo funcionan los pagos?</summary><p>Se establece una cuota mensual fija al inicio del tratamiento. Sin aumentos durante el proceso ni cobros ocultos al finalizar. Pregunta por los medios de pago disponibles.</p></details>
       <details class="faq reveal"><summary>¿Qué pasa si se me suelta un bracket?</summary><p>Escríbenos por WhatsApp: se evalúa el caso y se agenda atención prioritaria, normalmente el mismo día o el siguiente.</p></details>
     </div>
   </section>
 
   <!-- ═══ CONTACTO ═══ -->
-  <section class="section" id="contacto">
+  <section class="section section-alt" id="contacto">
     <div class="container contact-grid">
       <div class="contact-info">
         <p class="eyebrow reveal">Contacto</p>
@@ -303,14 +383,15 @@
     <div class="container footer-inner">
       <div>
         <strong data-clinica>Clínica Ortodoncia</strong>
-        <p>Ortodoncia especializada en <span data-ciudad>Valledupar</span>.</p>
+        <p>Ortodoncia especializada en <span data-ciudad>Valledupar</span>. Tu sonrisa, con un plan que sí se cumple.</p>
       </div>
       <div class="footer-links">
         <a href="#tratamientos">Tratamientos</a>
         <a href="#proceso">Proceso</a>
+        <a href="#planes">Planes</a>
         <a href="#faq">Preguntas</a>
       </div>
-      <p class="footer-note">Sitio diseñado y desarrollado por <a href="https://github.com/cristianagutierrezalc" target="_blank" rel="noopener">Cristian Gutiérrez</a> — desarrollo web local.</p>
+      <p class="footer-note">© <span id="year">2026</span> · Diseñado y desarrollado por <a href="https://github.com/cristianagutierrezalc" target="_blank" rel="noopener">Cristian Gutiérrez</a>.<br>Tus datos personales se manejan conforme a la Ley 1581 de 2012.</p>
     </div>
   </footer>
 
